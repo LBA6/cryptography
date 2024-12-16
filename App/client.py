@@ -114,7 +114,7 @@ def main():
     while True:
         choice = input("\nChoose an option (1: Send message, 2: Read message, 3: Exit): ")
         if choice == "1":
-            write_message(username, private_key)
+            write_message(username)
         elif choice == "2":
             read_message(username, private_key, prime_nb)
         elif choice == "3":
