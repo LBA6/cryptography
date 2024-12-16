@@ -22,19 +22,20 @@ def gen_key(prime_nb):
 # Encrypt the message
 def encrypt(msg, prime_nb, dest_pub_key, gen):
     key = gen_key(prime_nb)  # Ephemeral private key
-    shared = pow(dest_pub_key, key, prime_nb)  # Shared secret
+    shared_secret = pow(dest_pub_key, key, prime_nb)  # Shared secret
     pub_key = pow(gen, key, prime_nb)  # Public ephemeral key
 
-    enc_msg = [(ord(char) * shared) % prime_nb for char in msg]  # Encrypt each character
+    enc_msg = [(ord(char) * shared_secret) % prime_nb for char in msg]  # Encrypt each character
     return enc_msg, pub_key
 
 # Decrypt the message
 def decrypt(enc_msg, pub_key, priv_key, prime_nb):
-    s = pow(pub_key, priv_key, prime_nb)  # Shared secret
-    s_inv = pow(s, -1, prime_nb)  # Modular inverse of shared secret
+    shared_secret = pow(pub_key, priv_key, prime_nb)  # Shared secret
+    s_inv = pow(shared_secret, -1, prime_nb)  # Modular inverse of shared secret
 
     dec_msg = [chr((char * s_inv) % prime_nb) for char in enc_msg]  # Decrypt each character
     return dec_msg
+
 
 # Disable SSL certificate verification
 urllib3.disable_warnings()
