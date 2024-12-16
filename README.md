@@ -99,5 +99,12 @@ plaintext = ''.join(dec_msg)
 print("User 2: Decrypted message:", plaintext)
 ```
 
-# Chat application
+### Demo
+https://github.com/user-attachments/assets/1041fa54-02c8-4f1b-8589-e2e486424d2b
+
+
+## Chat application
 To demonstrate the use of ElGamal, I've created a simple chat application with a server side storing users and encrypted messages, and a client side allowing to send/read encrypted message from other users.
+
+### Demo
+https://github.com/user-attachments/assets/01578e2d-51ac-4f60-ba05-85d3e62fbace
