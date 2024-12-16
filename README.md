@@ -25,8 +25,11 @@ This is a Python implementation of the ElGamal encryption system, an asymmetric 
 
 ## Usage
 
+### Library
+```python
 import random
-from math import pow
+from Cryptodome.Util import number
+```
 
 ### Function to calculate the Greatest Common Divisor (GCD) using the Euclidean algorithm
 ```python
@@ -95,3 +98,6 @@ plaintext = ''.join(dec_msg)
 
 print("User 2: Decrypted message:", plaintext)
 ```
+
+# Chat application
+To demonstrate the use of ElGamal, I've created a simple chat application with a server side storing users and encrypted messages, and a client side allowing to send/read encrypted message from other users.
