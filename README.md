@@ -1,4 +1,4 @@
-# cryptography
+# Cryptography project
 Project for Cryptography and Data Security Technologies
 
 # ElGamal Encryption
